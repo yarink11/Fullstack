@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 7</title>
+    <style>
+        .grid-container {
+            color: white;
+            width: 1000px;
+            background-color: pink;
+        }
+
+        .Header {
+            height: 75px;
+            background-color: purple;
+        }
+
+        .Nav {
+            height: 35px;
+            background-color: blue;
+        }
+
+        .Section {
+            display: grid;
+            height: 400px;
+            margin: 10px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+        }
+
+        .Section>div {
+            border: 2px solid white;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: orange;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .pink {
+            background-color: rgb(255, 0, 153);
+        }
+
+        .Footer {
+            height: 70px;
+            background-color: rgb(179, 176, 176);
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="item Header">HEADER</div>
+        <div class="item Nav">NAV</div>
+        <div class="Section">
+            <div class="item red">RED</div>
+            <div class="item red">RED</div>
+            <div class="item yellow">YELLOW</div>
+            <div class="item yellow">YELLOW</div>
+            <div class="item red">RED</div>
+            <div class="item red">RED</div>
+            <div class="item yellow">YELLOW</div>
+            <div class="item yellow">YELLOW</div>
+            <div class="item green">GREEN</div>
+            <div class="item green">GREEN</div>
+            <div class="item pink">PINK</div>
+            <div class="item pink">PINK</div>
+            <div class="item green">GREEN</div>
+            <div class="item green">GREEN</div>
+            <div class="item pink">PINK</div>
+            <div class="item pink">PINK</div>
+        </div>
+        <div class="item Footer">FOOTER</div>
+    </div>
+</body>
+
+</html>
