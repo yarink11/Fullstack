@@ -15,75 +15,76 @@
         document.write("<p>2.<p>")
         const num2 = [9, 11, 17, 31]
         for (n of num2) { if (n > 12) { document.write("The index of the first number who is greater then 12 is " + num2.indexOf(n)); break } }
-        
+
         document.write("<p>3.<p>")
         const num3 = [8, 6, 4, 2]
         const filtered_num3 = num3.filter(n => n % 6 == 0)
         if (filtered_num3.length == 4) { document.write(true) } else { document.write(false) }
-        
+
         document.write("<p>4.<p>")
         const num4 = [12, 5, 3, 1]
         const filtered_num4 = num4.filter(n => n > 20)
         if (filtered_num4.length > 0) { document.write(true) } else { document.write(false) }
-        
+
         document.write("<p>5.<p>")
         const arr5 = ['a', 2, 'b', 1]
         document.write(arr5.filter(y => typeof y == "string"))
-        
+
         document.write("<p>6.<p>")
         const num6 = [8, '6', 4, '3']
         for (n of num6) { if (typeof n == 'number' && n > 5) { document.write("The first number who is greater then 5 is " + n); break } }
-        
+
         document.write("<p>7.<p>")
         const num7 = [4, 3, 2, 1]
         document.write(num7.map(n => n * 2))
-        
+
         document.write("<p>8.<p>")
         const num8 = [7, 5, 3, 1]
         const filtered_num8 = num8.filter(n => n < 9)
         if (filtered_num8.length == 4) { document.write(true) } else { document.write(false) }
-        
+
         document.write("<p>9.<p>")
         const num9 = [6, 5, 4, 3, 2, 1]
         document.write(num9.filter(n => n % 2 != 0))
-        
+
         document.write("<p>10.<p>")
         const words10 = ["apple", "mango", "banana"]
         document.write(words10.map(w => w + "-java"))
-        
+
         document.write("<p>11.<p>")
         const words11 = ["hello", "world", "programming", "computer"]
         for (w of words11) { if (w.length > 2) { document.write("The index of the first word who have more then 2 letters is " + words11.indexOf(w)); break } }
-        
+
         document.write("<p>12.<p>")
         const words12 = ["cat", "dog", "elephant", "fox"]
         const filtered_words12 = words12.filter(w => w.length >= 4)
         if (filtered_words12.length == 4) { document.write(true) } else { document.write(false) }
-        
+
         document.write("<p>13.<p>")
         const words13 = ["apple", "banana", "cherry", "date"]
         const filtered_words13 = words13.filter(w => w.startsWith("b"))
         if (filtered_words12.length > 0) { document.write(true) } else { document.write(false) }
-        
+
         document.write("<p>14.<p>")
         const words14 = ["apple", "banana", "orange", "grape"]
         document.write(words14.filter(w => w.endsWith("e")))
-        
+
         document.write("<p>15.<p>")
         const words15 = ["apple", "banana", "cherry"]
         for (w of words15) { if (w.includes("b")) { document.write(w); break } }
 
 
         const Me_JSON = {
-        "Birthday": "19.12.2000",
-        "City_Of_Birth": "Petah Tikva",
-        "Sisters": ["Meitar", "Shoval"],
-        "School": "Yitzhak Shamir",
-        "Hobbies": ["Football", "Netflix", "Maccabi"],
-        "Favorite_Movie": "Spiderman"
-    }
-    document.write("<h2>JSON Object:<h2>");
-    document.write("<h4>" + JSON.stringify(Me_JSON)+"<h4>")
+            "Name": "Yarin Keren",
+            "Birthday": "19.12.2000",
+            "City_Of_Birth": "Petah Tikva",
+            "Sisters": ["Meitar", "Shoval"],
+            "School": "Yitzhak Shamir",
+            "Hobbies": ["Football", "Netflix", "Maccabi"],
+            "Favorite_Movie": "Spiderman"
+        }
+        document.write("<h2>JSON Object:<h2>");
+        document.write("<h4>" + JSON.stringify(Me_JSON) + "<h4>")
 
     </script>
 </body>
