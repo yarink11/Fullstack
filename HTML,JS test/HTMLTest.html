@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HTML Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <style>
+        td {
+            height: 50px;
+            vertical-align: middle;
+            text-align: center
+        }
+
+        .red {
+
+            td,
+            th {
+                background-color: red;
+            }
+        }
+
+        .green {
+
+            td,
+            th {
+                background-color: green;
+            }
+        }
+
+        i {
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th scope="col"><b>#</b></th>
+                <th scope="col"><b>Icon or image</b></th>
+                <th scope="col"><b>Name of the store</b></th>
+                <th scope="col"><b>Address</b></th>
+                <th scope="col"><b>city</b></th>
+                <th scope="col"><b>Price</b></th>
+                <th scope="col"><b>Link of the store</b></th>
+                <th scope="col"><b>Rating of the place</b></th>
+
+        </thead>
+        <tbody class="table-group-divider">
+            <tr id="The first row">
+                <th scope="row"><b>1</b></th>
+                <td width="100"><a
+                        href="https://www.cwc.co.il/product/%D7%9E%D7%A1%D7%9A-%D7%9C%D7%93-75-%D7%90%D7%99%D7%A0%D7%A5-%D7%A1%D7%9E%D7%A1%D7%95%D7%A0%D7%92-ue75au7172/?gad_source=4&gclid=Cj0KCQiAzoeuBhDqARIsAMdH14FRILGuDt73p7vkz7PxjQCm6q2ENllgGsolYD0TRANFas54whUGR5gaAj1HEALw_wcB"
+                        target="_blank"><img src="1television.webp" alt="television" width="100"></a></td>
+                <td>The World Of Cinema</td>
+                <td>IDF 12</td>
+                <td>Ashkelon</td>
+                <td>₪<i id="Price1">2999</i>
+                </td>
+                <td>https://www.cwc.co.il/</td>
+                <td id="rating1">2/5</td>
+            </tr>
+            <tr id="The second row">
+                <th scope="row"><b>2</b></th>
+                <td width="100"><a
+                        href="https://www.cell-tec.co.il/product/%D7%98%D7%9C%D7%95%D7%95%D7%99%D7%96%D7%99%D7%94-%D7%97%D7%9B%D7%9E%D7%94-75-samsung-ue75cu7100--%D7%A1%D7%9E%D7%A1%D7%95%D7%A0%D7%92?aff=GoogleMerchant&gad_source=4&gclid=Cj0KCQiAzoeuBhDqARIsAMdH14EUGUHx40jV86WZr1VXBRMm7td42B_Ddjq8sZ3Czdm6gEKwHxAtOF0aAgO7EALw_wcB"
+                        target="_blank"><img src="2television.png" alt="television" width="100"></td>
+                <td>cell tec</td>
+                <td>Nordeu 10</td>
+                <td>Heifa</td>
+                <td>₪<i id="Price2">3499</i>
+                </td>
+                <td>https://www.cell-tec.co.il/</td>
+                <td id="rating2">3/5</td>
+            </tr>
+            <tr class="red" id="The third row">
+                <th scope="row"><b>3</b></th>
+                <td width="100"><a
+                        href="https://www.bettershop.co.il/product/lg_75ur80006lj/?utm_source=google&utm_medium=cpc&utm_campaign=Shopping_UHD_04_20&gad_source=1&gclid=Cj0KCQiAzoeuBhDqARIsAMdH14H3IovJtfmwOw-H4KRfw6kLQVcYTJgZHXUE-iT23yAqYIKESIfOaoEaArR0EALw_wcB"
+                        target="_blank"><img src="3television.png" alt="television" width="100"></a></td>
+                <td>bettershop</td>
+                <td>---</td>
+                <td>---</td>
+                <td>₪<i id="Price3">4170</i>
+                </td>
+                <td>https://www.bettershop.co.il/</td>
+                <td id="rating3">1/5</td>
+            </tr>
+            <tr class="green" id="The fourth row">
+                <th scope="row"><b>4</b></th>
+                <td width="100"><a
+                        href="https://hotstore.hotmobile.co.il/hisense-75-75e7gqil-smart-4k-quantum-dot-tv-10.html?cq_src=google_ads&cq_cmp=18510592012&cq_term=&cq_plac=&cq_net=g&cq_plt=gp&gad_source=4&gclid=Cj0KCQiAzoeuBhDqARIsAMdH14H_JiBX0rXkJRIVDF7Jm6TdNOjBrLIC8Xvw73Fl5MIsMmoF-hsl3VAaAjtaEALw_wcB"
+                        target="_blank"><img src="4television.png" alt="television" width="100"></a>
+                </td>
+                <td>hot store</td>
+                <td>Hevron 60</td>
+                <td>Beer sheva</td>
+                <td>₪<i id="Price4">3990</i>
+                </td>
+                <td>https://hotstore.hotmobile.co.il/</td>
+                <td id="rating4">5/5</td>
+            </tr>
+            <tr class="green" id="The fifth row">
+                <th scope="row"><b>5</b></th>
+                <td width="100"><a
+                        href="https://mandarin-e.co.il/product/%D7%9E%D7%A1%D7%9A-electra-%D7%90%D7%9C%D7%A7%D7%98%D7%A8%D7%94-75-%D7%93%D7%92%D7%9D-%D7%97%D7%93%D7%A9-%D7%9E%D7%93%D7%92%D7%9D-el750hk/?gad_source=4&gclid=Cj0KCQiAzoeuBhDqARIsAMdH14EuZSkgXl2h6J2br_5l4fcTUlt7QA-r9tR2O-oicbWBbfQ76BaBTwwaAhRqEALw_wcB"
+                        target="_blank"><img src="5television.png" alt="television" width="100"></a>
+                </td>
+                <td>mandarin electric</td>
+                <td>Hertzel 86</td>
+                <td>Ramle</td>
+                <td>₪<i id="Price5">2680</i>
+                </td>
+                <td>https://mandarin-e.co.il/</td>
+                <td id="rating5">4/5</td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="showaverage"></p>
+    <p id="showbest"></p>
+    <script>
+        let price1 = parseInt(document.getElementById("Price1").innerHTML)
+        let price2 = parseInt(document.getElementById("Price2").innerHTML)
+        let price3 = parseInt(document.getElementById("Price3").innerHTML)
+        let price4 = parseInt(document.getElementById("Price4").innerHTML)
+        let price5 = parseInt(document.getElementById("Price5").innerHTML)
+        let prices = [price1, price2, price3, price4, price5]
+        function average_price() {
+            let sum = 0;
+            for (p = 0; p < prices.length; p++) {
+                sum = sum + prices[p]
+                var average = sum / prices.length
+            }
+            return "The average price of all the rows is: " + average
+        }
+        let show_average = average_price()
+        document.getElementById("showaverage").innerHTML = show_average
+
+        function Best_option() {
+            let rating1 = document.getElementById("rating1").innerHTML[0]
+            let rating2 = document.getElementById("rating2").innerHTML[0]
+            let rating3 = document.getElementById("rating3").innerHTML[0]
+            let rating4 = document.getElementById("rating4").innerHTML[0]
+            let rating5 = document.getElementById("rating5").innerHTML[0]
+            let lowest_price = 10000000
+            for (p = 0; p < prices.length; p++) {
+                if (prices[p] < lowest_price) {
+                    lowest_price = prices[p]
+                } else { continue }
+            }
+            if (lowest_price == price1 && rating1 == 4) { return document.getElementById("The first row").id + " is the best option in this table" }
+            else if (lowest_price == price2 && rating2 == 4) { return document.getElementById("The second row").id + " is the best option in this table" }
+            else if (lowest_price == price3 && rating3 == 4) { return document.getElementById("The third row").id + " is the best option in this table" }
+            else if (lowest_price == price4 && rating4 == 4) { return document.getElementById("The fourth row").id + " is the best option in this table" }
+            else if (lowest_price == price5 && rating5 >= 4) { return document.getElementById("The fifth row").id + " is the best option in this table" }
+            else { document.write("The best option is not found in this table") }
+        }
+        let Best = Best_option()
+        document.getElementById("showbest").innerHTML = Best
+    </script>
+</body>
+</html>
