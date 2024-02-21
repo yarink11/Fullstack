@@ -1,0 +1,24 @@
+1)
+18. יוצר טבלה חדשה של מחירים ומאחד את הטבלה של המחירים לצד הטבלה של הפריטים
+19. הכמות כפול המחיר זה ה"secret"
+20. מראה את הפריט עם המחיר הגבוה ביותר
+2) 
+- CREATE TABLE students (id INTEGER PRIMARY KEY, name TEXT,city TEXT,birth TEXT);
+    INSERT INTO students VALUES (1, 'shalom', 'tel aviv', 1974);
+    INSERT INTO students VALUES (2,'yuri','raanana',1980);
+    INSERT INTO students VALUES (3,'anat','rishon',1994);
+    INSERT INTO students VALUES (4,'dana','rehovot',1990);
+    INSERT INTO students VALUES (5,'omer','jerusalem',1987);
+    CREATE TABLE grades (id INTEGER PRIMARY KEY, grade INTEGER);
+    INSERT INTO grades VALUES (1,95); 
+    INSERT INTO grades VALUES (2,70); 
+    INSERT INTO grades VALUES (3,85); 
+    INSERT INTO grades VALUES (4,99); 
+    INSERT INTO grades VALUES (5,91);
+- SELECT s.id, s.name, g.grade FROM students s JOIN grades g ON s.id=g.id
+- SELECT AVG(grade) from grades
+- ALTER TABLE grades ADD COLUMN excellent;
+    UPDATE grades set excellent='yes' WHERE grade > 90;
+    UPDATE grades set excellent='no' WHERE grade < 90;
+- SELECT s.id, s.name, g.grade FROM students s JOIN grades g ON s.id=g.id WHERE g.grade > (SELECT avg(grade) FROM grades)
+- SELECT s.id, s.name, g.grade FROM students s JOIN grades g ON s.id=g.id WHERE g.grade = (SELECT max(grade) FROM grades)
