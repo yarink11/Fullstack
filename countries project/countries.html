@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Countries Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    img {
+      width: 50px;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Countries</h2>
+
+  <table id="countries_table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Capital</th>
+        <th>Number of Citizens</th>
+        <th>Continent</th>
+        <th>Flag</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+    <tfoot>
+      <tr>
+        <td><input type="text" id="new_id"></td>
+        <td><input type="text" id="new_name"></td>
+        <td><input type="text" id="new_capital"></td>
+        <td><input type="number" id="new_number"></td>
+        <td><input type="text" id="new_continent"></td>
+        <td><input type="text" id="new_Flag"></td>
+        <td><button onclick="addCountry()">Add country</button></td>
+        <span id="result" style="color:red"></span>
+      </tr>
+    </tfoot>
+  </table>
+  <script>
+    document.addEventListener('DOMContentLoaded', fetchCountries);
+
+    function fetchCountries() {
+      fetch('http://localhost:3000/countries/')
+        .then(response => response.json())
+        .then(countries => {
+          const tbody = document.getElementById('countries_table').getElementsByTagName('tbody')[0];
+          tbody.innerHTML = '';
+          countries.forEach(country => {
+            const row = tbody.insertRow();
+            row.insertCell().textContent = country.id;
+            row.insertCell().textContent = country.name;
+            row.insertCell().textContent = country.capital;
+            row.insertCell().textContent = country.number_of_citizens;
+            row.insertCell().textContent = country.continent;
+            row.insertCell().innerHTML = `<img src="${country.url_to_flag_picture}" title="${country.name} Flag" alt="${country.name} Flag">`;
+            let deleteCell = row.insertCell();
+            deleteCell.innerHTML = `<button class="btn-delete" onclick="deleteCountry('${country.id}')">Delete</button>`;
+          });
+        });
+    }
+
+    function deleteCountry(countryId) {
+      fetch(`http://localhost:3000/countries/${countryId}`,
+        { method: 'DELETE' })
+        .then(() => fetchUsers())
+        .catch(error => console.error('Error:', error));
+    }
+
+    function addCountry() {
+      const newCountry = {
+        id: document.getElementById('new_id').value,
+        name: document.getElementById('new_name').value,
+        capital: document.getElementById('new_capital').value,
+        number_of_citizens: document.getElementById('new_number').value,
+        continent: document.getElementById('new_continent').value,
+        url_to_flag_picture: document.getElementById('new_Flag').value,
+      }
+
+
+      fetch('http://localhost:3000/countries', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newCountry)
+      })
+        .then(response => response.json())
+        .then(() => {
+          fetchCountries();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+  </script>
+</body>
+
+</html>

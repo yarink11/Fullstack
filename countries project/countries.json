@@ -1,0 +1,84 @@
+{
+  "countries": [
+    {
+      "id": "1",
+      "name": "United States",
+      "capital": "Washington, D.C.",
+      "number_of_citizens": 331002651,
+      "continent": "North America",
+      "url_to_flag_picture": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg"
+    },
+    {
+      "id": "2",
+      "name": "Canada",
+      "capital": "Ottawa",
+      "number_of_citizens": 37742154,
+      "continent": "North America",
+      "url_to_flag_picture": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg"
+    },
+    {
+      "id": "3",
+      "name": "France",
+      "capital": "Paris",
+      "number_of_citizens": 65273511,
+      "continent": "Europe",
+      "url_to_flag_picture": "https://www.yo-yoo.co.il/flags/images/d74cc0.png"
+    },
+    {
+      "id": "4",
+      "name": "Japan",
+      "capital": "Tokyo",
+      "number_of_citizens": 126476461,
+      "continent": "Asia",
+      "url_to_flag_picture": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg"
+    },
+    {
+      "id": "5",
+      "name": "Australia",
+      "capital": "Canberra",
+      "number_of_citizens": 25499884,
+      "continent": "Oceania",
+      "url_to_flag_picture": "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg"
+    },
+    {
+      "id": "6",
+      "name": "Brazil",
+      "capital": "Brasília",
+      "number_of_citizens": 212559417,
+      "continent": "South America",
+      "url_to_flag_picture": "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"
+    },
+    {
+      "id": "7",
+      "name": "Israel",
+      "capital": "Jerusalem",
+      "number_of_citizens": "9261786",
+      "continent": "Asia",
+      "url_to_flag_picture": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg"
+    },
+    {
+      "id": "8",
+      "name": "India",
+      "capital": "New Delhi",
+      "number_of_citizens": 1380004385,
+      "continent": "Asia",
+      "url_to_flag_picture": "https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg"
+    },
+    {
+      "id": "9",
+      "name": "Russia",
+      "capital": "Moscow",
+      "number_of_citizens": 146793744,
+      "continent": "Europe",
+      "url_to_flag_picture": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg"
+    },
+    {
+      "id": "10",
+      "name": "United Kingdom",
+      "capital": "London",
+      "number_of_citizens": 67886011,
+      "continent": "Europe",
+      "url_to_flag_picture": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg"
+    }
+  ]
+}

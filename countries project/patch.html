@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PATCH</title>
+    <style>
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PATCH</title>
+</head>
+
+<body>
+    <h2>Patch Country</h2>
+    <form id="country_form">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="capital">Capital:</label>
+        <input type="text" id="capital" name="capital">
+
+        <label for="number_of_citizens">Number of Citizens:</label>
+        <input type="number" id="number_of_citizens" name="number_of_citizens">
+
+        <label for="continent">Continent:</label>
+        <input type="text" id="continent" name="continent">
+
+        <label for="url_to_flag_picture">Flag:</label>
+        <input type="text" id="url_to_flag_picture" name="url_to_flag_picture">
+
+        <input type="submit" value="Send">
+    </form>
+    <script>
+        function my_submit(e) {
+            e.preventDefault();
+
+            const patch_country = {
+                id: document.getElementById('id').value,
+                name: document.getElementById('name').value,
+                capital: document.getElementById('capital').value,
+                number_of_citizens: document.getElementById('number_of_citizens').value,
+                continent: document.getElementById('continent').value,
+                url_to_flag_picture: document.getElementById('url_to_flag_picture').value,
+            }
+
+            if (patch_country.id == '') {
+                delete patch_country.id
+            }
+            if (patch_country.name == '') {
+                delete patch_country.name
+            }
+            if (patch_country.capital == '') {
+                delete patch_country.capital
+            }
+            if (patch_country.number_of_citizens == '') {
+                delete patch_country.number_of_citizens
+            }
+            if (patch_country.continent == '') {
+                delete patch_country.continent
+            }
+            if (patch_country.url_to_flag_picture == '') {
+                delete patch_country.url_to_flag_picture
+            }
+            const send_details = {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(patch_country)
+            }
+            fetch(`http://localhost:3000/countries/${document.getElementById('id').value}`, send_details)
+                .then(response => response.json())
+                .then(data => {
+                    alert('country patched')
+                })
+        }
+
+        document.getElementById('country_form').onsubmit = my_submit
+    </script>
+</body>
+
+</html>

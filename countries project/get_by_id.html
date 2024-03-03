@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            width: 50px;
+            height: auto;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET BY ID</title>
+</head>
+
+<body>
+    <h2>Get All</h2>
+    GET BY ID : <input type="text" id="country_id_txt" value="0">
+    <button id="get_country" onclick="get_country_by_id()">GET BY ID</button>
+    &nbsp; <span id="result" style="color:red"></span><br /><br />
+    <table id="countries_table" style="width: 100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Capital</th>
+                <th>Number of Citizens</th>
+                <th>Continent</th>
+                <th>Flag</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        function get_country_by_id() {
+
+            const country_id = document.getElementById('country_id_txt').value
+
+            fetch(`http://localhost:3000/countries/${country_id}`)
+                .then(response => {
+                    if (response.status === 404) {
+                        return null;
+                    }
+                    return response.json()
+                })
+                .then(country => {
+                    const tbody = document.getElementById('countries_table').getElementsByTagName('tbody')[0]
+                    if (country == null) {
+                        document.getElementById('result').innerHTML = "Not found ..."
+                        return
+                    }
+
+                    document.getElementById('result').innerHTML = ""
+
+                    const new_row = document.createElement('tr')
+                    insert_cell(new_row, country.id)
+                    insert_cell(new_row, country.name)
+                    insert_cell(new_row, country.capital)
+                    insert_cell(new_row, country.number_of_citizens)
+                    insert_cell(new_row, country.continent)
+                    insert_cell(new_row, country.url_to_flag_picture)
+                    tbody.appendChild(new_row)
+                })
+        }
+        function insert_cell(new_row, data) {
+            const new_cell = document.createElement('td')
+            new_cell.textContent = data
+            new_row.appendChild(new_cell)
+        }
+    </script>
+</body>
+
+</html>
